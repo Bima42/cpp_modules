@@ -8,7 +8,7 @@ FLAGS = -Wall -Wextra -Werror
 
 CPP_FLAGS = -std=c++98
 
-OBJS = $(SRCS:.c=.o)
+OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
@@ -18,7 +18,7 @@ $(NAME) : $(OBJS)
 clean:
 	rm -rf $(OBJS)
 
-fclean:
+fclean: clean
 	rm -rf $(NAME)
 
 re : fclean all
