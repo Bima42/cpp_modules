@@ -55,13 +55,16 @@ void	PhoneBook::searchContact ( void ) {
 	else 
 	{
 		printHeader();
-		std::cout << "Please, enter an index: ";
-		std::cin >> index;
-		if (index < 1 || index > 8)
-			std::cout << "Wrong index." << std::endl;
-		else
+		std::cout << "Please, enter an index. 0 to quit: ";
+		while (!(std::cin >> index) || (index < 0 || index > this->count))
+		{
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			std::cout << "Invalid Index\n>";
+		}
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		if (index > 0)
 			printContact(index);
-		std::cin.ignore();
 	}
 }
 
