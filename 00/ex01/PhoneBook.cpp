@@ -1,21 +1,71 @@
 #include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook ( void ) {
-	std::cout << "Constructor called" << std::endl;
-	this->count = 0;
+	std::cout << "Welcome." << std::endl;
+	this->count = -1;
 	return;
 }
 
 PhoneBook::~PhoneBook ( void ) {
-	std::cout << "Destructor called" << std::endl;
 	return;
 }
 
-void	PhoneBook::searchContact( void ) {
-	std::cout << "Enter an index : " << std::endl;
+void PhoneBook::printFormat ( std::string str) {
+	if (str.size() > 10)
+	{
+		str = str.insert(9, ".");
+		str = str.substr(0, 10);
+	}
+	else
+		std::cout << std::setw(10);
+	std::cout << str;
 }
 
-void	PhoneBook::collectInfos( void ) {
+void	PhoneBook::printHeader ( void ) {
+	std::cout << "|-------------------------------------------|" << std::endl;
+	std::cout << "|     Index|First name| Nast name|  Nickname|" << std::endl;
+	std::cout << "|-------------------------------------------|" << std::endl;
+	for (int i = 0; i < this->count; i++) {
+		std::cout << "|         " << i + 1 << "|";
+		printFormat(this->contact[i].first_name);
+		std::cout << "|";
+		printFormat(this->contact[i].last_name);
+		std::cout << "|";
+		printFormat(this->contact[i].nickname);
+		std::cout << "|" << std::endl;
+	}
+	std::cout << "|-------------------------------------------|" << std::endl;
+}
+
+void	PhoneBook::printContact ( int i ) {
+	std::cout << "|         " << i << "|";
+	printFormat(this->contact[i - 1].first_name);
+	std::cout << "|";
+	printFormat(this->contact[i - 1].last_name);
+	std::cout << "|";
+	printFormat(this->contact[i - 1].nickname);
+	std::cout << "|" << std::endl;
+}
+
+void	PhoneBook::searchContact ( void ) {
+	int	index = -1;
+
+	if (this->count == -1)
+		std::cout << "Add a contact before searching" << std::endl;
+	else 
+	{
+		printHeader();
+		std::cout << "Please, enter an index: ";
+		std::cin >> index;
+		if (index < 1 || index > 8)
+			std::cout << "Wrong index." << std::endl;
+		else
+			printContact(index);
+		std::cin.ignore();
+	}
+}
+
+void	PhoneBook::collectInfos ( void ) {
 	std::string	infos;
 
     std::cout << "First_name : " << std::endl;
@@ -39,7 +89,7 @@ void	PhoneBook::collectInfos( void ) {
 void	PhoneBook::addContact() {
     std::string infos;
 
-	if (this->count == 8)
+	if (this->count == 8 || this->count == -1)
 		this->count = 0;
 	this->collectInfos();
 	this->count++;
