@@ -11,9 +11,9 @@ class ZombieHorde {
 
 	public:
 		ZombieHorde( void );
+		ZombieHorde( int N );
 		~ZombieHorde( void );
-		Zombie* zombieHorde( int N, std::string name );
-		void	announceHorde( Zombie *ptr );
+		void	announce( void );
 };
 
 #endif

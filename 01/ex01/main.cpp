@@ -2,16 +2,17 @@
 
 int main( void )
 {
-	ZombieHorde	test;
-	Zombie	*ptr;
+	std::cout << "Test: Wrong numbers." << std::endl;
+	ZombieHorde test1(-4);
+	test1.announce();
 
-	ptr = test.zombieHorde(5, "Yvan");
-	test.announceHorde(ptr);
+	std::cout << "Test: Horde of 10" << std::endl;
+	ZombieHorde test2(10);
+	test2.announce();
 
-	std::cout << "------------------------" << std::endl;
-
-	ptr = test.zombieHorde(8, "Yvan");
-	test.announceHorde(ptr);
+	std::cout << "Test: Horde of 2" << std::endl;
+	ZombieHorde test3(2);
+	test3.announce();
 
 	return (0);
 }

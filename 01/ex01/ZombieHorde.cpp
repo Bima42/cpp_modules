@@ -5,15 +5,15 @@ ZombieHorde::ZombieHorde ( void )
 	return;
 }
 
-// Delete _horde when destroyed
 ZombieHorde::~ZombieHorde ( void )
 {
 	delete [] _horde;
 	return;
 }
 
-Zombie* ZombieHorde::zombieHorde ( int N, std::string name )
+ZombieHorde::ZombieHorde ( int N )
 {
+	std::string pool[9] = {"Moustache", "Saucisse", "Yvan", "Dirty", "Jean-Bate", "Barney", "Duboulow", "Djodjo", "Edjie"};
 	int	i;
 
 	if (N <= 0)
@@ -25,16 +25,15 @@ Zombie* ZombieHorde::zombieHorde ( int N, std::string name )
 	_nb = N;
 	i = -1;
 	while (++i < N)
-		_horde[i].setName(name);
-	return (&(_horde[0]));
+		_horde[i].setName(pool[rand() % 9]);
 }
 
-// Using previous announce function
-void	ZombieHorde::announceHorde ( Zombie* ptr )
+// Using previous announce function using _horde (Zombie pointer)
+void	ZombieHorde::announce ( void )
 {
 	int	i;
 
 	i = -1;
 	while (++i < _nb)
-		ptr[i].announce();
+		_horde[i].announce();
 }
