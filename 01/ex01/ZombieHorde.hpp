@@ -6,14 +6,14 @@
 class ZombieHorde {
 
 	private:
-		Zombie* _horde;
 		int		_nb;
 
 	public:
 		ZombieHorde( void );
-		ZombieHorde( int N );
 		~ZombieHorde( void );
+		Zombie*	zombieHorde( int N, std::string name );
 		void	announce( void );
+		Zombie*	horde;
 };
 
 #endif
