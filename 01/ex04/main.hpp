@@ -5,7 +5,7 @@
 #include <fstream>
 #include <string>
 
-int	checkArgs(std::string &arg, std::string &s1, std::string &s2);
+int	checkArgs(std::string &arg, std::string &s1, std::string &s2, std::ifstream &file);
 int	replaceString(std::string arg, std::string s1, std::string s2);
 
 #endif
