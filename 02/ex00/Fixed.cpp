@@ -20,7 +20,7 @@ Fixed::~Fixed ( void )
 	return ;
 }
 
-Fixed &Fixed::operator=( const Fixed &op )
+Fixed &Fixed::operator = ( const Fixed &op )
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	// Protect autoaffectation
