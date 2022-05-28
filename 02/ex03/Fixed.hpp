@@ -15,7 +15,7 @@ class Fixed {
 		Fixed ( const Fixed &copy);
 		Fixed ( int value);
 		Fixed ( float value);
-		~Fixed ( void );
+		virtual ~Fixed ( void );
 
 		Fixed &operator = (const Fixed &right);
 

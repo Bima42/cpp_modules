@@ -14,7 +14,7 @@ class Point {
 		Point ( float x, float y );
 		Point ( const Point &copy );
 		Point &operator = (const Point &right );
-		~Point ( void );
+		virtual ~Point ( void );
 
 		const Fixed &getValueY ( void ) const;
 		const Fixed &getValueX ( void ) const;
