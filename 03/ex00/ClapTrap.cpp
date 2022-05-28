@@ -30,7 +30,7 @@ void ClapTrap::takeDamage ( unsigned int amount ) {
 	{
 		this->_hp = (this->getHp() - (int)amount) < 1 ? 0 : (this->getHp() - (int)amount);
 		if (this->getHp() == 0)
-			std::cout << "ClapTrap " << this->getName() << " is wounded." << std::endl;
+			std::cout << "ClapTrap " << this->getName() << " has been taken down !" << std::endl;
 		else
 			std::cout << "ClapTrap " << this->getName() << " has taken " << amount << " damage !"
 				<< " Only " << this->getHp() << " remaining." << std::endl; 

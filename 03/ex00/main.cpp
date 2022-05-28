@@ -12,6 +12,8 @@ int main( void )
 	test.takeDamage(12);
 	test.beRepaired(40);
 	test.takeDamage(1);
+	test.takeDamage(12);
+	test.takeDamage(1);
 	test.attack("Buddy");
 	test.attack("Buddy");
 	test.attack("Buddy");
