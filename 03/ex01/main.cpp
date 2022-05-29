@@ -1,28 +1,48 @@
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main( void )
 {
-	ClapTrap test("Dude");
+	ClapTrap clap("Dude");
+	ScavTrap scav("Bob");
 
-	test.attack("Buddy");
-	test.attack("Buddy");
-	test.attack("Buddy");
-	test.takeDamage(9);
-	test.beRepaired(15);
-	test.takeDamage(12);
-	test.beRepaired(40);
-	test.takeDamage(1);
-	test.takeDamage(12);
-	test.takeDamage(1);
-	test.attack("Buddy");
-	test.attack("Buddy");
-	test.attack("Buddy");
-	test.attack("Buddy");
-	test.attack("Buddy");
-	test.attack("Buddy");
-	test.attack("Buddy");
-	test.attack("Buddy");
-	test.attack("Buddy");
+
+	clap.attack("Buddy");
+	clap.attack("Buddy");
+	clap.attack("Buddy");
+	clap.takeDamage(9);
+	clap.beRepaired(15);
+	clap.takeDamage(12);
+	clap.beRepaired(40);
+	clap.takeDamage(1);
+	clap.takeDamage(12);
+	clap.takeDamage(1);
+	clap.attack("Buddy");
+	clap.attack("Buddy");
+	clap.attack("Buddy");
+	clap.attack("Buddy");
+	clap.attack("Buddy");
+	clap.attack("Buddy");
+	clap.attack("Buddy");
+	clap.beRepaired(15);
+	clap.attack("Buddy");
+	clap.attack("Buddy");
+
+	std::cout << "--------------------------" << std::endl;
+
+	scav.guardGate();
+	scav.attack("Bouddha");
+	scav.attack("Bouddha");
+	scav.takeDamage(10);
+	scav.beRepaired(20);
+	scav.takeDamage(150);
+	scav.takeDamage(80);
+	scav.attack("Bouddha");
+	scav.attack("Bouddha");
+	scav.beRepaired(20);
+	scav.attack("Bouddha");
+	scav.attack("Bouddha");
+	scav.attack("Bouddha");
+	scav.attack("Bouddha");
 
 	return (0);
 }

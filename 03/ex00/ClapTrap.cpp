@@ -5,17 +5,24 @@ ClapTrap::ClapTrap ( void ): _name(), _hp(10), _energy(10), _ad(0) {
 }
 
 ClapTrap::ClapTrap ( std::string name ): _name(name), _hp(10), _energy(10), _ad(0) {
-	std::cout << "Name constructor called" << std::endl;
+	std::cout << "ClapTrap " << name << " is build."<< std::endl;
+}
+
+ClapTrap::ClapTrap ( const ClapTrap &copy ):_name(copy.getName()), 
+											_hp(copy.getHp()),
+											_energy(copy.getEnergy()),
+											_ad(copy.getAd()) {
+	std::cout << "ClapTrap " << this->getName() << " copy constructor called" << std::endl;
 }
 
 ClapTrap::~ClapTrap ( void ) {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "ClapTrap " << this->getName() << " destructor called." << std::endl;
 }
 
 void ClapTrap::attack ( const std::string &target ) {
 	if (this->getEnergy() > 0 && this->getHp() > 0)
 	{
-		this->_energy--;
+		useEnergy();
 		std::cout << "ClapTrap " << this->getName() << " attacks "
 			<< target << ", causing " << this->getAd()  << " points of damage!" << std::endl;
 	}
@@ -40,14 +47,15 @@ void ClapTrap::takeDamage ( unsigned int amount ) {
 }
 
 void ClapTrap::beRepaired ( unsigned int amount ) {
-	if (this->getHp() < 10)
+	if (this->getEnergy() > 0)
 	{
-		this->_hp = (this->_hp + (int)amount) > 10 ? 10 : (this->_hp + (int)amount);
+		useEnergy();
+		this->_hp = this->getHp() + amount;
 		std::cout << "ClapTrap " << this->getName() << " has been repaired for "
 			<< amount << " HP !" << " HP remaining : " << this->getHp() << std::endl;
 	}
 	else
-		std::cout << "ClapTrap " << this->getName() << " is full !" << std::endl;
+		std::cout << "ClapTrap " << this->getName() << " cannot be repaired anymore !" << std::endl;
 }
 
 void ClapTrap::setName ( std::string name ) {
@@ -66,18 +74,22 @@ void ClapTrap::setEnergy ( unsigned int energy ) {
 	this->_energy = energy;
 }
 
-std::string ClapTrap::getName ( void ) {
+std::string ClapTrap::getName ( void ) const {
 	return (this->_name);
 }
 
-int ClapTrap::getHp ( void ) {
+int ClapTrap::getHp ( void ) const {
 	return (this->_hp);
 }
 
-int ClapTrap::getEnergy ( void ) {
+int ClapTrap::getEnergy ( void ) const {
 	return (this->_energy);
 }
 
-int ClapTrap::getAd ( void ) {
+int ClapTrap::getAd ( void ) const {
 	return (this->_ad);
+}
+
+void ClapTrap::useEnergy ( void ) {
+	this->_energy--;
 }

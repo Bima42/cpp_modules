@@ -20,9 +20,6 @@ int main( void )
 	test.attack("Buddy");
 	test.attack("Buddy");
 	test.attack("Buddy");
-	test.attack("Buddy");
-	test.attack("Buddy");
-	test.attack("Buddy");
 
 	return (0);
 }

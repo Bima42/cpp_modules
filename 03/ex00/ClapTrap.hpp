@@ -8,22 +8,25 @@ class ClapTrap {
 
 	public:
 		ClapTrap ( void );
-		ClapTrap ( std::string name );
+		ClapTrap ( const std::string name );
+		ClapTrap ( const ClapTrap &copy );
 		~ClapTrap ( void );
 
 		void attack ( const std::string &target );
 		void takeDamage ( unsigned int amount );
 		void beRepaired ( unsigned int amount );
 
-		int getEnergy ( void );
-		int getHp ( void );
-		int getAd ( void );
-		std::string getName ( void );
+		int getEnergy ( void ) const;
+		int getHp ( void ) const;
+		int getAd ( void ) const;
+		std::string getName ( void ) const;
 
 		void setHp ( unsigned int hp );
 		void setAd ( unsigned int ad );
 		void setEnergy ( unsigned int energy );
-		void setName ( std::string name );
+		void setName ( const std::string name );
+		
+		void useEnergy ( void );
 
 	private:
 		std::string _name;
