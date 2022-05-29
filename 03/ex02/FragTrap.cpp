@@ -37,5 +37,12 @@ void FragTrap::attack ( const std::string &target ) {
 }
 
 void FragTrap::highFivesGuys ( void ) {
+ 	std::string ret;
+
 	std::cout << "FragTrap " << this->getName() << " : High Fives ?" << std::endl;
+    std::getline(std::cin, ret);
+    if (std::cin.eof() || std::cin.bad() || ret.empty() || ret == "no" || ret == "n")
+        std::cout << ":'(" << std::endl;
+	else 
+        std::cout << "Let's go!" << std::endl;
 }
