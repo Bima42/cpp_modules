@@ -1,6 +1,6 @@
-NAME = fragtrap
+NAME = animal
 
-SRCS =	main.cpp ClapTrap.cpp ScavTrap.cpp
+SRCS =	main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
 
 CC = c++
 
