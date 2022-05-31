@@ -34,6 +34,5 @@ int main()
 	while (i --> 0)
 		delete animals[i];
 
-	while (1) {}
 	return 0;
 }
