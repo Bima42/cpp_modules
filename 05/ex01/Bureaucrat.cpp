@@ -90,12 +90,12 @@ void Bureaucrat::signForm(Form &form) const
 {
 	if (form.isSigned())
 	{
-		std::cout << Bureaucrat::getName() << " can't sign " << form
+		std::cout << Bureaucrat::getName() << " can't sign " << form.getName()
 				<< " because form is already signed." << std::endl;
 	}
 	else if (form.getSignGrade() < this->_grade)
 	{
-		std::cout << Bureaucrat::getName() << " cannot sign " << form
+		std::cout << Bureaucrat::getName() << " cannot sign " << form.getName()
 				<< " because his grade is too low." << std::endl;
 	}
 	else

@@ -16,6 +16,7 @@ int main (void)
 	std::cout << "isSigned = " << form.isSigned() << std::endl;
 	form.beSigned(edjie);
 	std::cout << "isSigned = " << form.isSigned() << std::endl;
+	edjie.signForm(form);
 
 	std::cout << "------------- Error -------------" << std::endl;
 
@@ -31,6 +32,8 @@ int main (void)
 		std::cerr << e.what() << std::endl;
 	}
 
+	std::cout << "--------------------------------------" << std::endl;
+
 	try
 	{
 		Bureaucrat	edjie("Edjie", 5);
@@ -43,15 +46,30 @@ int main (void)
 		std::cerr << e.what() << std::endl;
 	}
 
+	std::cout << "--------------------------------------" << std::endl;
+
 	try
 	{
 		Bureaucrat edjie("Edjie", 8);
 		Form		form("Formulaire", 10, 5);
-		std::cout << form;
+		std::cout << form << std::endl;
 		form.beSigned(edjie);
 		std::cout << form;
 		form.beSigned(edjie);
 		std::cout << form;
+	}
+	catch(std::exception const &e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+
+	std::cout << "--------------------------------------" << std::endl;
+
+	try
+	{
+		Bureaucrat	edjie("Edjie", 60);
+		Form		form("Formulaire", 50, 5);
+		edjie.signForm(form);
 	}
 	catch(std::exception const &e)
 	{
