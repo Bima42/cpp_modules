@@ -4,6 +4,8 @@
 # include <exception>
 # include <iostream>
 # include <string>
+class Bureaucrat;
+# include "Form.hpp"
 
 class Bureaucrat {
 
@@ -23,6 +25,7 @@ class Bureaucrat {
 
 		const void downGrade ( void );
 		const void upGrade ( void );
+		void signForm( Form &form ) const;
 
 //		les classes d’exception n’ont pas à se conformer à la forme canonique de Coplien.
 

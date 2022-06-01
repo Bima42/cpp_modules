@@ -1,7 +1,8 @@
 #ifndef FORM_H
 # define FORM_H
 
-#include "Bureaucrat.hpp"
+class Form;
+# include "Bureaucrat.hpp"
 
 class Form {
 
@@ -18,11 +19,11 @@ class Form {
 
 		Form &operator=( const Form &right );
 
-		void beSigned ( Bureaucrat &bureaucrat );
+		void beSigned ( const Bureaucrat &bureaucrat );
 		const std::string getName ( void ) const;
 		const int getSignGrade ( void ) const;
 		const int getExecuteGrade ( void ) const;
-		bool isSigned ( void );
+		bool isSigned ( void ) const;
 
 		class GradeTooHighException: public std::exception {
 			virtual const char*  what() const throw();
@@ -30,6 +31,10 @@ class Form {
 
 		class GradeTooLowException: public std::exception {
 			virtual const char*  what() const throw();
+		};
+
+		class AlreadySignedException: public std::exception {
+			virtual const char* what () const throw(); 
 		};
 };
 

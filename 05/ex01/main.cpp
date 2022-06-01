@@ -1,5 +1,4 @@
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
 
 int main (void)
 {
@@ -46,8 +45,10 @@ int main (void)
 
 	try
 	{
-		Bureaucrat edjie("Edjie", 12);
+		Bureaucrat edjie("Edjie", 8);
 		Form		form("Formulaire", 10, 5);
+		std::cout << form;
+		form.beSigned(edjie);
 		std::cout << form;
 		form.beSigned(edjie);
 		std::cout << form;

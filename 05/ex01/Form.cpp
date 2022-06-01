@@ -6,22 +6,19 @@
 ** ==============================================================================
 */
 
-Form::Form ( const std::string name, int sign, int execute ): _name(name), _signGrade(sign),
-																_executeGrade(execute) {
+Form::Form ( const std::string name, int sign, int execute): _name(name), _signGrade(sign), _executeGrade(execute) {
 	if (_signGrade< 1 || _executeGrade < 1)
 		throw Form::GradeTooLowException();
 	else if (_signGrade > 150 || _executeGrade > 150)
 		throw Form::GradeTooHighException();
-		_signed = false;
+	_signed = false;
 }
 
-Form::Form ( const Form &copy ): _name(copy.getName()), _signGrade(copy.getSignGrade()),
-								_executeGrade(copy.getExecuteGrade()) {
+Form::Form ( const Form &copy ): _name(copy.getName()), _signGrade(copy.getSignGrade()), _signed(copy._signed), _executeGrade(copy.getExecuteGrade()) {
 	if (_signGrade < 1 || _executeGrade < 1)
 		throw Form::GradeTooLowException();
 	else if (_signGrade > 150 || _executeGrade > 150)
 		throw Form::GradeTooHighException();
-	_signed = false;
 }
 
 Form::~Form ( void ) {}
@@ -39,7 +36,8 @@ Form &Form::operator= ( const Form &right ) {
 }
 
 std::ostream &operator << ( std::ostream &out, const Form &right ) {
-	out << "Form : " << right.getName() << " | Sign grade required : " << right.getSignGrade()
+	out << "Form : " << right.getName() << ((right.isSigned()) ? " = Signed" : " = Unsigned")
+		<< " | Sign grade required : " << right.getSignGrade()
 		<< " | Execution grade required : " << right.getExecuteGrade() << std::endl;
 	return (out);
 }
@@ -50,11 +48,13 @@ std::ostream &operator << ( std::ostream &out, const Form &right ) {
 ** ==============================================================================
 */
 
-void Form::beSigned ( Bureaucrat &bureaucrat ) {
-	if (bureaucrat.getGrade() <= Form::getSignGrade())
-		_signed = true;
-	else
+void Form::beSigned ( const Bureaucrat &bureaucrat ) {
+	if (this->_signed == true)
+		throw Form::AlreadySignedException();
+	else if (bureaucrat.getGrade() > Form::getSignGrade()) // this->_signed == false but already checked before
 		throw Form::GradeTooLowException();
+	else
+		_signed = true;
 }
 
 const std::string Form::getName ( void ) const {
@@ -69,7 +69,7 @@ const int Form::getExecuteGrade ( void ) const {
 	return (_executeGrade);
 }
 
-bool Form::isSigned ( void ) {
+bool Form::isSigned ( void ) const {
 	return (_signed);
 }
 
@@ -79,4 +79,8 @@ const char* Form::GradeTooHighException::what ( void ) const throw() {
 
 const char* Form::GradeTooLowException::what ( void ) const throw() {
 	return ("FormException : Grade too Low");
+}
+
+const char* Form::AlreadySignedException::what ( void ) const throw() {
+	return ("FormException : Already signed");
 }
