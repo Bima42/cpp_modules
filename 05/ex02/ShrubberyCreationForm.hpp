@@ -16,8 +16,17 @@ class Shrubbery: public Form {
 
 		void execute ( Bureaucrat const & executor ) const;
 
+		class BadOpenException: public std::exception {
+			virtual const char* what() const throw();
+		};
+
+		class BadWriteException: public std::exception {
+			virtual const char* what() const throw();
+		};
+
 	private:
 		const std::string _target;
+		static const std::string _tree;
 };
 
 #endif

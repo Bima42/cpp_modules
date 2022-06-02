@@ -73,6 +73,11 @@ bool Form::isSigned ( void ) const {
 	return (_signed);
 }
 
+/* ==============================================================================
+**									EXCEPTIONS									|
+** ==============================================================================
+*/
+
 const char* Form::GradeTooHighException::what ( void ) const throw() {
 	return ("FormException : Grade too High");
 }
