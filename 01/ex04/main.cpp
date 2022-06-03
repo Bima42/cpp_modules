@@ -29,7 +29,7 @@ int	replaceString(std::string arg, std::string s1, std::string s2)
 	nameFile.append(".replace", 8);
 
 	newFile.open(nameFile);
-	if (!newFile.isopen() || newFile.bad())
+	if (!newFile.is_open() || newFile.bad())
 		return (0);
 
 	while (std::getline(file, tmp))
