@@ -9,7 +9,6 @@ class Data {
 	
 	public:
 		Data ( void );
-		Data ( int x, int y );
 		Data ( const Data &copy );
 		virtual ~Data ( void );
 
