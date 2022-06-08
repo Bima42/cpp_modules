@@ -8,7 +8,7 @@ class WrongCat: public WrongAnimal {
 	public:
 		WrongCat ( void );
 		WrongCat ( const WrongCat &copy );
-		~WrongCat ( void );
+		virtual ~WrongCat ( void );
 
 		WrongCat &operator = ( const WrongCat &right );
 

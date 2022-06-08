@@ -8,7 +8,7 @@ class Shrubbery: public Form {
 	public:
 		Shrubbery ( const std::string target );
 		Shrubbery ( const Shrubbery &copy );
-		~Shrubbery ( void );
+		virtual ~Shrubbery ( void );
 
 		Shrubbery &operator=( const Shrubbery &right );
 

@@ -17,15 +17,15 @@ class Bureaucrat {
 	public:
 		Bureaucrat ( const std::string name, int grade );
 		Bureaucrat ( const Bureaucrat &copy );
-		~Bureaucrat ( void );
+		virtual ~Bureaucrat ( void );
 
 		Bureaucrat &operator=( const Bureaucrat &right );
 
 		const std::string getName ( void ) const;
 		int getGrade ( void ) const;
 
-		const void downGrade ( void );
-		const void upGrade ( void );
+		void downGrade ( void );
+		void upGrade ( void );
 		void signForm( Form &form ) const;
 
 		void executeForm ( const Form &form ) const;

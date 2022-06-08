@@ -25,6 +25,7 @@ Intern::~Intern ( void ) {}
 */
 
 Intern &Intern::operator = ( const Intern &right ) {
+	(void)right;
 	return (*this);
 }
 

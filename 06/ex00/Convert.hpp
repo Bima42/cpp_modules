@@ -12,7 +12,7 @@ class Convert {
 	public:
 		Convert ( void );
 		Convert ( const Convert &copy );
-		~Convert ( void );
+		virtual ~Convert ( void );
 
 		Convert &operator=( const Convert &right );
 

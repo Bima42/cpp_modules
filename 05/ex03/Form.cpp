@@ -14,7 +14,7 @@ Form::Form ( const std::string name, int sign, int execute): _name(name), _signG
 	_signed = false;
 }
 
-Form::Form ( const Form &copy ): _name(copy.getName()), _signGrade(copy.getSignGrade()), _signed(copy._signed), _executeGrade(copy.getExecuteGrade()) {
+Form::Form ( const Form &copy ): _name(copy.getName()), _signed(copy._signed), _signGrade(copy.getSignGrade()), _executeGrade(copy.getExecuteGrade()) {
 	if (_signGrade < 1 || _executeGrade < 1)
 		throw Form::GradeTooLowException();
 	else if (_signGrade > 150 || _executeGrade > 150)
@@ -61,11 +61,11 @@ const std::string Form::getName ( void ) const {
 	return (_name);
 }
 
-const int Form::getSignGrade ( void ) const {
+int Form::getSignGrade ( void ) const {
 	return (_signGrade);
 }
 
-const int Form::getExecuteGrade ( void ) const {
+int Form::getExecuteGrade ( void ) const {
 	return (_executeGrade);
 }
 

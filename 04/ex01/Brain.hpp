@@ -9,7 +9,7 @@ class Brain {
 	public:
 		Brain ( void );
 		Brain ( const Brain &copy );
-		~Brain ( void );
+		virtual ~Brain ( void );
 
 		Brain &operator=( const Brain &right);
 

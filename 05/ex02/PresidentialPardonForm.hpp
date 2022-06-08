@@ -8,7 +8,7 @@ class Presidential: public Form {
 	public:
 		Presidential ( const std::string target );
 		Presidential ( const Presidential &copy );
-		~Presidential ( void );
+		virtual ~Presidential ( void );
 
 		Presidential &operator=( const Presidential &right );
 

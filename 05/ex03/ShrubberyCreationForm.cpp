@@ -50,6 +50,7 @@ Shrubbery::~Shrubbery ( void ) {}
 */
 
 Shrubbery &Shrubbery::operator = ( const Shrubbery &right ) {
+	(void)right;
 	return (*this);
 }
 
@@ -65,6 +66,7 @@ const std::string Shrubbery::getTarget ( void ) const {
 
 
 void Shrubbery::execute ( Bureaucrat const & executor ) const {
+	(void)executor;
 	std::ofstream file(_target + "_shrubbery");
 
 	if (!file.is_open() || file.bad())

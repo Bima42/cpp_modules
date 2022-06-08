@@ -15,14 +15,14 @@ class Form {
 	public:
 		Form (const std::string name, int sign, int execute);
 		Form ( const Form &copy );
-		~Form ( void );
+		virtual ~Form ( void );
 
 		Form &operator=( const Form &right );
 
 		void beSigned ( const Bureaucrat &bureaucrat );
 		const std::string getName ( void ) const;
-		const int getSignGrade ( void ) const;
-		const int getExecuteGrade ( void ) const;
+		int getSignGrade ( void ) const;
+		int getExecuteGrade ( void ) const;
 		bool isSigned ( void ) const;
 
 		class GradeTooHighException: public std::exception {

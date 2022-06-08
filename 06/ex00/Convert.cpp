@@ -26,7 +26,7 @@ std::string Convert::getType ( std::string arg ) const {
 
 		if (c >= '0' && c <= '9')
 			return ("int");
-		else if (c >= 32 || c <= 126)
+		else if (c >= 32 && c <= 126)
 			return ("char");
 		return ("invalid");
 	}

@@ -11,7 +11,7 @@ class Intern {
 	public:
 		Intern ( void );
 		Intern ( const Intern &copy );
-		~Intern ( void );
+		virtual ~Intern ( void );
 
 		Intern &operator=( const Intern &right );
 

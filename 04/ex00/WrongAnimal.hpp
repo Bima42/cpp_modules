@@ -9,7 +9,7 @@ class WrongAnimal {
 	public:
 		WrongAnimal ( void );
 		WrongAnimal ( const WrongAnimal &copy );
-		~WrongAnimal ( void );
+		virtual ~WrongAnimal ( void );
 
 		WrongAnimal &operator = ( const WrongAnimal &right );
 

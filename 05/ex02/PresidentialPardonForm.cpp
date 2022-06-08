@@ -20,6 +20,7 @@ Presidential::~Presidential ( void ) {}
 */
 
 Presidential &Presidential::operator = ( const Presidential &right ) {
+	(void)right;
 	return (*this);
 }
 
@@ -35,5 +36,6 @@ const std::string Presidential::getTarget ( void ) const {
 
 
 void Presidential::execute ( Bureaucrat const & executor ) const {
+	(void)executor;
 	std::cout << _target << " was forgiven by Zaphob Beeblebrox" << std::endl;
 }

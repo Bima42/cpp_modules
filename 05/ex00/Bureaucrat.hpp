@@ -21,8 +21,8 @@ class Bureaucrat {
 		const std::string getName ( void ) const;
 		int getGrade ( void ) const;
 
-		const void downGrade ( void );
-		const void upGrade ( void );
+		void downGrade ( void );
+		void upGrade ( void );
 
 
 //		les classes d’exception n’ont pas à se conformer à la forme canonique de Coplien.

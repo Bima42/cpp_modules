@@ -8,7 +8,7 @@ class Robotomy: public Form {
 	public:
 		Robotomy ( const std::string target );
 		Robotomy ( const Robotomy &copy );
-		~Robotomy ( void );
+		virtual ~Robotomy ( void );
 
 		Robotomy &operator=( const Robotomy &right );
 

@@ -21,8 +21,8 @@ class Form {
 
 		void beSigned ( const Bureaucrat &bureaucrat );
 		const std::string getName ( void ) const;
-		const int getSignGrade ( void ) const;
-		const int getExecuteGrade ( void ) const;
+		int getSignGrade ( void ) const;
+		int getExecuteGrade ( void ) const;
 		bool isSigned ( void ) const;
 
 		virtual void execute ( Bureaucrat const & executor ) const = 0;
