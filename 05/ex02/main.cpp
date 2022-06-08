@@ -4,6 +4,7 @@
 
 int main (void)
 {
+	srand (time(NULL));
 	try
 	{
 		Bureaucrat	edjie("Edjie", 1);

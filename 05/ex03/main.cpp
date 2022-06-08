@@ -5,6 +5,7 @@
 
 int main (void)
 {
+	srand (time(NULL));	
 	try
 	{
 		Intern intern;

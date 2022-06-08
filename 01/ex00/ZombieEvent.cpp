@@ -24,6 +24,7 @@ void	ZombieEvent::randomChump ( void )
 {
 	int	i;
 	std::string namePool[9] = {"Moustache", "Saucisse", "Yvan", "Dirty", "Jean-Bate", "Barney", "Duboulow", "Djodjo", "Edjie"};
+
 	i = rand() % 9; // Pick index between 0 and 9
 	Zombie toto(namePool[i], _type); // stack allocation
 	toto.announce();

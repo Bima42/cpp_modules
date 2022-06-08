@@ -4,7 +4,7 @@ SRCS = megaphone.cpp
 
 CC = c++
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -pedantic
 
 CPP_FLAGS = -std=c++98
 

@@ -3,6 +3,7 @@
 int main ( void ) {
 	Base *ptr;
 
+	srand (time(NULL));
 	ptr = generate();
 	identify(ptr);
 	identify(*ptr);

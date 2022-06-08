@@ -6,6 +6,7 @@ int main ( void )
 	Zombie*		zomb2;
 	ZombieEvent	event;
 
+	srand (time(NULL));
 	zomb1.announce();
 
 	event.setZombieType("Human");

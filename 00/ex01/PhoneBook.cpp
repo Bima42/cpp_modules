@@ -96,4 +96,4 @@ void	PhoneBook::addContact() {
 		this->count = 0;
 	this->collectInfos();
 	this->count++;
-};
+}
