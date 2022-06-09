@@ -9,17 +9,17 @@ Base *generate ( void ) {
 	switch (rand() % 3) {
 		case 0: {
 			A *a = new A();
-			std::cout << "---- Creating Base A ----" << std::endl;
+			std::cout << "🚧 ---- Creating Base A ---- 🚧" << std::endl;
 			return (a);
 		}
 		case 1: {
 			B *b = new B();
-			std::cout << "---- Creating Base B ----" << std::endl;
+			std::cout << "🚧 ---- Creating Base B ---- 🚧"  << std::endl;
 			return (b);
 		}
 		case 2: {
 			C *c = new C();
-			std::cout << "---- Creating Base C ----" << std::endl;
+			std::cout << "🚧 ---- Creating Base C ---- 🚧" << std::endl;
 			return (c);
 		}
 		default: {
