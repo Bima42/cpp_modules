@@ -1,7 +1,8 @@
 NAME = directory
 
 SRCS =	main.cpp \
-		PhoneBook.cpp
+		PhoneBook.cpp \
+		Contact.cpp
 
 CC = c++
 

@@ -25,13 +25,13 @@ void	PhoneBook::printHeader ( void ) {
 	std::cout << "|-------------------------------------------|" << std::endl;
 	std::cout << "|     Index|First name| Nast name|  Nickname|" << std::endl;
 	std::cout << "|-------------------------------------------|" << std::endl;
-	for (int i = 0; i < this->count; i++) {
+	for (int i = 0; i < 8; i++) {
 		std::cout << "|         " << i + 1 << "|";
-		printFormat(this->contact[i].first_name);
+		printFormat(this->contact[i].getFirstName());
 		std::cout << "|";
-		printFormat(this->contact[i].last_name);
+		printFormat(this->contact[i].getLastName());
 		std::cout << "|";
-		printFormat(this->contact[i].nickname);
+		printFormat(this->contact[i].getNickName());
 		std::cout << "|" << std::endl;
 	}
 	std::cout << "|-------------------------------------------|" << std::endl;
@@ -39,11 +39,11 @@ void	PhoneBook::printHeader ( void ) {
 
 void	PhoneBook::printContact ( int i ) {
 	std::cout << "|         " << i << "|";
-	printFormat(this->contact[i - 1].first_name);
+	printFormat(this->contact[i - 1].getFirstName());
 	std::cout << "|";
-	printFormat(this->contact[i - 1].last_name);
+	printFormat(this->contact[i - 1].getLastName());
 	std::cout << "|";
-	printFormat(this->contact[i - 1].nickname);
+	printFormat(this->contact[i - 1].getNickName());
 	std::cout << "|" << std::endl;
 }
 
@@ -52,11 +52,11 @@ void	PhoneBook::searchContact ( void ) {
 
 	if (this->count == -1)
 		std::cout << "Add a contact before searching" << std::endl;
-	else 
+	else
 	{
 		printHeader();
 		std::cout << "Please, enter an index. 0 to quit: ";
-		while (!(std::cin >> index) || (index < 0 || index > this->count))
+		while (!(std::cin >> index) || (index < 0 || index > 8))
 		{
 			std::cin.clear();
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -73,20 +73,20 @@ void	PhoneBook::collectInfos ( void ) {
 
     std::cout << "First_name : " << std::endl;
     std::cin >> infos;
-    this->contact[this->count].first_name = infos;
+    this->contact[this->count].setFirstName(infos);
 
     std::cout << "Last_name : " << std::endl;
     std::cin >> infos;
-    this->contact[this->count].last_name = infos;
+    this->contact[this->count].setLastName(infos);
 
     std::cout << "Nickname : " << std::endl;
     std::cin >> infos;
-    this->contact[this->count].nickname = infos;
+    this->contact[this->count].setNickName(infos);
 	std::cin.ignore();
 
     std::cout << "Darkest secret : " << std::endl;
     std::getline(std::cin, infos);
-    this->contact[this->count].secret = infos;
+    this->contact[this->count].setSecret(infos);
 }
 
 void	PhoneBook::addContact() {
