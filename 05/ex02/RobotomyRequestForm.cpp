@@ -37,7 +37,7 @@ const std::string Robotomy::getTarget ( void ) const {
 
 void Robotomy::execute ( Bureaucrat const & executor ) const {
 	(void)executor;
-	std::cout << "BRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR" << std::endl;
+	std::cout << "🤖 BRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR" << std::endl;
 	if (rand() % 2) // OR (rand() % 100 > 50)
 		std::cout << _target << " has been robotomized" << std::endl;
 	else

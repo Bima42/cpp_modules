@@ -8,6 +8,9 @@ int main( void )
 	DiamondTrap diamond("Hybride");
 
 	diamond.whoAmI();
+	diamond.attack("Yvan");
+	diamond.highFivesGuys();
+	diamond.guardGate();
 	std::cout << diamond.getAd() << std::endl;
 	std::cout << diamond.getEnergy() << std::endl;
 	std::cout << diamond.getHp() << std::endl;

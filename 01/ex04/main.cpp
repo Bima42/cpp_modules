@@ -7,9 +7,16 @@ int	checkArgs(std::string &arg, std::string &s1, std::string &s2, std::ifstream 
 		std::cout << "Error: an empty string was sent" << std::endl;
 		return (0);
 	}
+
 	if (file.fail())
 	{
 		std::cerr << "Error: " << strerror(errno);
+		return (0);
+	}
+
+	if (file.peek() == EOF)
+	{
+		std::cout << "Error: Empty File" << std::endl;
 		return (0);
 	}
 	return (1);	

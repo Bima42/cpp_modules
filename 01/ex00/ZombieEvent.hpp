@@ -12,7 +12,7 @@ class ZombieEvent {
 		ZombieEvent();
 		~ZombieEvent();
 		Zombie* newZombie ( std::string name );
-		void	randomChump ( void );
+		void	randomChump ( std::string name );
 		void	setZombieType ( std::string newType );
 };
 

@@ -1,29 +1,14 @@
 #include "ScavTrap.hpp"
 
-/*ScavTrap::ScavTrap ( void ): ClapTrap() {
-	std::cout << "Default Scav constructor called" << std::endl;
-	_hp = 100;
-	_energy = 50;
-	_ad = 20;
-}
-
-ScavTrap::ScavTrap ( std::string name ): ClapTrap(name) {
-	std::cout << "ScavTrap " << name << " is built." << std::endl;
-	_name = name;;
-	_hp = 100;
-	_energy = 50;
-	_ad = 20;
-}*/
-
 ScavTrap::ScavTrap ( void ): ClapTrap() {
-	std::cout << "Default ScavTrap constructor called" << std::endl;
+	std::cout << "🤖 Default ScavTrap constructor called" << std::endl;
 	this->setHp(100);
 	this->setEnergy(50);
 	this->setAd(20);
 }
 
 ScavTrap::ScavTrap ( const std::string name ): ClapTrap(name) {
-	std::cout << "ScavTrap " << name << " is build." << std::endl;
+	std::cout << " 🤖 ScavTrap " << name << " is build." << std::endl;
 	this->setName(name);
 	this->setHp(100);
 	this->setEnergy(50);
@@ -31,11 +16,11 @@ ScavTrap::ScavTrap ( const std::string name ): ClapTrap(name) {
 }
 
 ScavTrap::ScavTrap ( const ScavTrap &copy ): ClapTrap(copy) {
-	std::cout << "ScavTrap " << this->getName() << " copy constructor called" << std::endl;
+	std::cout << "🤖 ScavTrap " << this->getName() << " copy constructor called" << std::endl;
 }
 
 ScavTrap::~ScavTrap ( void ) {
-	std::cout << "ScavTrap " << this->getName() << " destructor called" << std::endl;
+	std::cout << "🤖 ScavTrap " << this->getName() << " destructor called" << std::endl;
 }
 
 void ScavTrap::attack ( const std::string &target ) {
@@ -52,5 +37,5 @@ void ScavTrap::attack ( const std::string &target ) {
 }
 
 void ScavTrap::guardGate ( void ) {
-	std::cout << "ScavTrap " << this->getName() << " : Mode Gate Keeper activated." << std::endl;
+	std::cout << "ScavTrap " << this->getName() << " : Mode Gate Keeper activated. 🛡" << std::endl;
 }

@@ -7,27 +7,14 @@ int main( void )
 
 
 	clap.attack("Buddy");
-	clap.attack("Buddy");
-	clap.attack("Buddy");
 	clap.takeDamage(9);
 	clap.beRepaired(15);
 	clap.takeDamage(12);
 	clap.beRepaired(40);
 	clap.takeDamage(1);
 	clap.takeDamage(12);
-	clap.takeDamage(1);
-	clap.attack("Buddy");
-	clap.attack("Buddy");
-	clap.attack("Buddy");
-	clap.attack("Buddy");
-	clap.attack("Buddy");
-	clap.attack("Buddy");
-	clap.attack("Buddy");
-	clap.beRepaired(15);
-	clap.attack("Buddy");
-	clap.attack("Buddy");
 
-	std::cout << "--------------------------" << std::endl;
+	std::cout << "-------------------------------------" << std::endl;
 
 	scav.guardGate();
 	scav.attack("Bouddha");

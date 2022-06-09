@@ -8,12 +8,14 @@ int main ( void )
 	std::string&	ref = str;
 
 	str = "HI THIS IS BRAIN";
+	std::cout << "🚧 ========== MEMORY ADDRESS ============ 🚧" << std::endl;
 	std::cout << "Memory address of string : " << &str << std::endl;
 	std::cout << "Memory address of pointer : " << ptr << std::endl;
 	std::cout << "Memory address of reference : " << &ref << std::endl;
 
-	std::cout << "-----------------------------------" << std::endl;
+	std::cout << std::endl;
 
+	std::cout << "🚧 =========== STRING VALUE ============= 🚧" << std::endl;
 	std::cout << "Value of string variable : " << str << std::endl;
 	std::cout << "Value of string variable : " << *ptr << std::endl;
 	std::cout << "Value of string variable : " << ref << std::endl;

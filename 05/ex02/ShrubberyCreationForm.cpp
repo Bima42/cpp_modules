@@ -64,6 +64,9 @@ const std::string Shrubbery::getTarget ( void ) const {
 	return (_target);
 }
 
+const std::string Shrubbery::getTree ( void ) const {
+	return (_tree);
+}
 
 void Shrubbery::execute ( Bureaucrat const & executor ) const {
 	(void)executor;

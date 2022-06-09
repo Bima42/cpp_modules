@@ -76,12 +76,12 @@ void Bureaucrat::downGrade ( void ) {
 	if (this->_grade < 150)
 		this->_grade++;
 	else
-		throw Bureaucrat::GradeTooHighException();
+		throw Bureaucrat::GradeTooLowException();
 }
 
 void Bureaucrat::upGrade ( void ) {
 	if (this->_grade > 1)
 		this->_grade--;
 	else
-		throw Bureaucrat::GradeTooLowException();
+		throw Bureaucrat::GradeTooHighException();
 }

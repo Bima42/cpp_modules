@@ -1,5 +1,12 @@
 #include "ClapTrap.hpp"
 
+/* ========================================================================
+ *                                                                        |
+ *                           CONSTRUCTOR/DESTRUCTOR                       |
+ *                                                                        |
+ * ========================================================================
+ */
+
 ClapTrap::ClapTrap ( void ): _name(), _hp(10), _energy(10), _ad(0) {
 	std::cout << "Default constructor called" << std::endl;
 }
@@ -18,6 +25,16 @@ ClapTrap::ClapTrap ( const ClapTrap &copy ):_name(copy.getName()),
 ClapTrap::~ClapTrap ( void ) {
 	std::cout << "ClapTrap " << this->getName() << " destructor called." << std::endl;
 }
+
+
+
+/* ========================================================================
+ *                                                                        |
+ *                               FUNCTIONS                                |
+ *                                                                        |
+ * ========================================================================
+ */
+
 
 void ClapTrap::attack ( const std::string &target ) {
 	if (this->getEnergy() > 0 && this->getHp() > 0)
@@ -58,6 +75,18 @@ void ClapTrap::beRepaired ( unsigned int amount ) {
 		std::cout << "ClapTrap " << this->getName() << " cannot be repaired anymore !" << std::endl;
 }
 
+void ClapTrap::useEnergy ( void ) {
+	this->_energy--;
+}
+
+
+/* ========================================================================
+ *                                                                        |
+ *                               GETTER/SETTER                            |
+ *                                                                        |
+ * ========================================================================
+ */
+
 void ClapTrap::setName ( std::string name ) {
 	this->_name = name;
 }
@@ -88,8 +117,4 @@ int ClapTrap::getEnergy ( void ) const {
 
 int ClapTrap::getAd ( void ) const {
 	return (this->_ad);
-}
-
-void ClapTrap::useEnergy ( void ) {
-	this->_energy--;
 }

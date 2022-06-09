@@ -6,7 +6,6 @@ int main ( void )
 	Zombie*		zomb2;
 	ZombieEvent	event;
 
-	srand (time(NULL));
 	zomb1.announce();
 
 	event.setZombieType("Human");
@@ -15,10 +14,10 @@ int main ( void )
 	delete zomb2;
 
 	event.setZombieType("Random");
-	event.randomChump();
-	event.randomChump();
-	event.randomChump();
-	event.randomChump();
+	event.randomChump("Yvan");
+	event.randomChump("Edjie");
+	event.randomChump("Putchar");
+	event.randomChump("Duboulow");
 
 	return (0);
 }

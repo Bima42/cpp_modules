@@ -7,7 +7,6 @@ ZombieHorde::ZombieHorde ( void )
 
 ZombieHorde::~ZombieHorde ( void )
 {
-	delete [] horde;
 	return;
 }
 

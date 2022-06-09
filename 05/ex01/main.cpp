@@ -5,20 +5,17 @@ int main (void)
 	Bureaucrat edjie("Edjie", 8);
 	Form form("Formulaire", 10, 15);
 
-	std::cout << "---------- Functions ----------" << std::endl;
-	std::cout << "Sign Grade : " << form.getSignGrade() << std::endl;
-	std::cout << "Execute Grade : " << form.getExecuteGrade() << std::endl;
-	std::cout << form.getName() << std::endl;
-
-	std::cout << "--------- Operator << ---------" << std::endl;
+	std::cout << "🚧 ---------- TEST Form : Sign=10, Exec=15 ---------- 🚧" << std::endl;
 	std::cout << edjie;
 	std::cout << form;
 	std::cout << "isSigned = " << form.isSigned() << std::endl;
+	std::cout << "### Sign form ... ###" << std::endl;
 	form.beSigned(edjie);
 	std::cout << "isSigned = " << form.isSigned() << std::endl;
 	edjie.signForm(form);
 
-	std::cout << "------------- Error -------------" << std::endl;
+	std::cout << std::endl;
+	std::cout << "🚧 ----------------- ERRORS ----------------- 🚧" << std::endl;
 
 	try
 	{
@@ -54,7 +51,9 @@ int main (void)
 		Form		form("Formulaire", 10, 5);
 		std::cout << form << std::endl;
 		form.beSigned(edjie);
-		std::cout << form;
+		std::cout << "### Sign form ... ###" << std::endl << std::endl;
+		std::cout << form << std::endl;
+		std::cout << "### ReSign form ... ###" << std::endl << std::endl;
 		form.beSigned(edjie);
 		std::cout << form;
 	}

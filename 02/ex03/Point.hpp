@@ -20,4 +20,6 @@ class Point {
 		const Fixed &getValueX ( void ) const;
 };
 
+std::ostream &operator<<( std::ostream &out, const Point &right ); 
+
 #endif

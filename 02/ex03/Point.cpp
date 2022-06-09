@@ -35,3 +35,8 @@ const Fixed &Point::getValueX ( void ) const
 {
 	return (_x);
 }
+
+std::ostream &operator<<( std::ostream &out, const Point &right ) {
+	out << "x: " << right.getValueX() << " | y: " << right.getValueY();
+	return (out);
+}

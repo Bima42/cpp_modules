@@ -14,7 +14,7 @@ class Brain {
 		Brain &operator=( const Brain &right);
 
 		void printIdeas ( void ) const;
-		const std::string *getIdeas ( void ) const;
+		std::string *getIdeas ( void );
 
 	private:
 		std::string ideas[100];
