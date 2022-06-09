@@ -12,7 +12,6 @@ class Array {
 			Array<T> (const Array<T> &copy ): _ptr(NULL) { *this = copy; }
 			~Array<T> ( void ) { delete[] _ptr; }
 
-
 			Array<T> &operator=( const Array<T> &right ) { 
 				if (&right == this)
 					return (*this);
@@ -33,10 +32,7 @@ class Array {
 				return _ptr[index];
 			}
 
-
 			int getSize ( void ) const { return (this->_size); }
-
-			void setContent ( const int i ) { this->_i = i; }
 
 			class WrongIndex: public std::exception {
 				virtual const char* what() const throw() {

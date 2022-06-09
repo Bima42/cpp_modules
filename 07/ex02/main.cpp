@@ -6,6 +6,7 @@ int main(int, char**)
 {
     Array<int> numbers(MAX_VAL);
     int* mirror = new int[MAX_VAL];
+
     srand(time(NULL));
     for (int i = 0; i < MAX_VAL; i++)
     {
@@ -13,7 +14,7 @@ int main(int, char**)
         numbers[i] = value;
         mirror[i] = value;
     }
-    //SCOPE
+
     {
         Array<int> tmp = numbers;
         Array<int> test(tmp);
@@ -48,6 +49,10 @@ int main(int, char**)
     {
         numbers[i] = rand();
     }
-    delete [] mirror;//
+    delete [] mirror;
+
+	Array<int> test;
+	std::cout << "Empty Array : " << test.getSize() << std::endl;
+
     return 0;
 }
