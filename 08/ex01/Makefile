@@ -32,7 +32,7 @@ $(NAME) :	$(OBJS)
 			@echo $(G)Finished [$(NAME)]$(X)
 
 clean:
-			@rm -rf $(OBJS) $(OBJSe)
+			@rm -rf $(OBJS) 
 			@echo $(R)Removed [$(OBJS)]$(X)
 
 fclean: clean
