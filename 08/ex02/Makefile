@@ -1,8 +1,10 @@
 NAME = span
 NAME_e = span_eval
+NAME_l = span_list
 
 SRCS =		main.cpp
 SRCS_e =	main_eval.cpp
+SRCS_l =	main_list.cpp
 
 CC = c++
 FLAGS = -Wall -Wextra -Werror -pedantic
@@ -10,6 +12,7 @@ CPP_FLAGS = -std=c++98
 
 OBJS = $(SRCS:.cpp=.o)
 OBJSe = $(SRCS_e:.cpp=.o)
+OBJSl = $(SRCS_l:.cpp=.o)
 
 Y = "\033[33m"
 R = "\033[31m"
@@ -42,16 +45,26 @@ $(NAME_e) :	$(OBJSe)
 			@$(CC) $(FLAGS) $(CPP_FLAGS) -o $(NAME_e) $(OBJSe)
 			@echo $(G)Finished [$(NAME_e)]$(X)
 
-eval : $(NAME_e)
+$(NAME_l) :	$(OBJSl)
+			@echo $(Y)Compiling [$(SRCS_l)]...$(X)
+			@echo $(G)Finished [$(SRCS_l)]$(X)
+			@echo
+			@echo $(Y)Compiling [$(NAME_l)]...$(X)
+			@$(CC) $(FLAGS) $(CPP_FLAGS) -o $(NAME_l) $(OBJSl)
+			@echo $(G)Finished [$(NAME_l)]$(X)
+
+eval: $(NAME_e)
+
+list: $(NAME_l)
 
 clean:
-			@rm -rf $(OBJS) $(OBJSe)
-			@echo $(R)Removed [$(OBJS)][$(OBJSe)]$(X)
+			@rm -rf $(OBJS) $(OBJSe) $(OBJSl)
+			@echo $(R)Removed [$(OBJS)][$(OBJSe)][$(OBJSl)]$(X)
 
 fclean: clean
-			@rm -rf $(NAME) $(NAME_e)
-			@echo $(R)Removed [$(NAME)][$(NAME_e)]$(X)
+			@rm -rf $(NAME) $(NAME_e) $(NAME_l)
+			@echo $(R)Removed [$(NAME)][$(NAME_e)][$(NAME_l)]$(X)
 
 re : fclean all
 
-.PHONY: all clean fclean re eval
+.PHONY: all clean fclean re eval list
