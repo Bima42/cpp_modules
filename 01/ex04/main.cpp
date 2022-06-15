@@ -10,7 +10,7 @@ int	checkArgs(std::string &arg, std::string &s1, std::string &s2, std::ifstream 
 
 	if (file.fail())
 	{
-		std::cerr << "Error: " << strerror(errno);
+		std::cerr << "Error: " << strerror(errno) << std::endl;
 		return (0);
 	}
 
