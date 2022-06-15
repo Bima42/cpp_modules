@@ -2,7 +2,9 @@
 
 FragTrap::FragTrap ( void ): ClapTrap() {
 	std::cout << "Default FragTrap constructor called" << std::endl;
+	this->setType("FragTrap");
 	this->setHp(100);
+	this->setHpBase(100);
 	this->setEnergy(100);
 	this->setAd(30);
 }
@@ -10,7 +12,9 @@ FragTrap::FragTrap ( void ): ClapTrap() {
 FragTrap::FragTrap ( const std::string name ): ClapTrap(name) {
 	std::cout << "FragTrap " << name << " is build." << std::endl;
 	this->setName(name);
+	this->setType("FragTrap");
 	this->setHp(100);
+	this->setHpBase(100);
 	this->setEnergy(100);
 	this->setAd(30);
 }

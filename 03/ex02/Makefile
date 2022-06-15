@@ -1,4 +1,4 @@
-NAME = fixed
+NAME = frag
 
 SRCS =	main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 

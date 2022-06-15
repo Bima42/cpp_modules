@@ -1,4 +1,4 @@
-NAME = fixed
+NAME = diamond
 
 SRCS =	main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 

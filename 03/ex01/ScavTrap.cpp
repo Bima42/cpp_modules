@@ -2,7 +2,9 @@
 
 ScavTrap::ScavTrap ( void ): ClapTrap() {
 	std::cout << "🤖 Default ScavTrap constructor called" << std::endl;
+	this->setType("ScavTrap");
 	this->setHp(100);
+	this->setHpBase(100);
 	this->setEnergy(50);
 	this->setAd(20);
 }
@@ -10,7 +12,9 @@ ScavTrap::ScavTrap ( void ): ClapTrap() {
 ScavTrap::ScavTrap ( const std::string name ): ClapTrap(name) {
 	std::cout << " 🤖 ScavTrap " << name << " is build." << std::endl;
 	this->setName(name);
+	this->setType("ScavTrap");
 	this->setHp(100);
+	this->setHpBase(100);
 	this->setEnergy(50);
 	this->setAd(20);
 }

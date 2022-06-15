@@ -1,4 +1,4 @@
-NAME = fixed
+NAME = scav
 
 SRCS =	main.cpp ClapTrap.cpp ScavTrap.cpp
 

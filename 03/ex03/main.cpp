@@ -2,18 +2,20 @@
 
 int main( void )
 {
-	ClapTrap clap("Dude");
-	ScavTrap scav("Bob");
-	FragTrap frag("Michel");
 	DiamondTrap diamond("Hybride");
 
-	diamond.whoAmI();
-	diamond.attack("Yvan");
-	diamond.highFivesGuys();
+	std::cout << "--------------------" << std::endl;
+	std::cout << "AD : " << diamond.getAd() << std::endl;
+	std::cout << "Energy : " << diamond.getEnergy() << std::endl;
+	std::cout << "HP : " << diamond.getHp() << std::endl;
+	std::cout << "--------------------" << std::endl;
 	diamond.guardGate();
-	std::cout << diamond.getAd() << std::endl;
-	std::cout << diamond.getEnergy() << std::endl;
-	std::cout << diamond.getHp() << std::endl;
+	diamond.whoAmI();
+	std::cout << "--------------------" << std::endl;
+	diamond.attack("Yvan");
+	diamond.takeDamage(20);
+	std::cout << "--------------------" << std::endl;
+	diamond.highFivesGuys();
 
 	return (0);
 }

@@ -18,8 +18,10 @@ class ClapTrap {
 
 		int getEnergy ( void ) const;
 		int getHp ( void ) const;
+		int getHpBase ( void ) const;
 		int getAd ( void ) const;
 		std::string getName ( void ) const;
+		std::string getType ( void ) const;
 
 		void setHp ( unsigned int hp );
 		void setAd ( unsigned int ad );
@@ -30,9 +32,11 @@ class ClapTrap {
 
 	private:
 		std::string _name;
-		unsigned int _hp;
-		unsigned int _energy;
-		unsigned int _ad;
+		std::string _type;
+		int _hp;
+		int _energy;
+		int _ad;
+		int _hpBase;
 };
 
 #endif

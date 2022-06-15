@@ -24,11 +24,7 @@ int main( void )
 	scav.takeDamage(150);
 	scav.takeDamage(80);
 	scav.attack("Bouddha");
-	scav.attack("Bouddha");
 	scav.beRepaired(20);
-	scav.attack("Bouddha");
-	scav.attack("Bouddha");
-	scav.attack("Bouddha");
 	scav.attack("Bouddha");
 
 	return (0);

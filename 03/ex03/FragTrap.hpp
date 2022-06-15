@@ -9,7 +9,7 @@ class FragTrap: virtual public ClapTrap {
 		FragTrap ( void );
 		FragTrap ( const std::string name );
 		FragTrap ( const FragTrap &copy );
-		~FragTrap ( void );
+		virtual ~FragTrap ( void );
 
 		void attack ( const std::string &target );
 
