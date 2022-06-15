@@ -38,7 +38,10 @@ int	replaceString(std::string arg, std::string s1, std::string s2)
 
 	newFile.open(nameFile);
 	if (!newFile.is_open() || newFile.bad())
+	{	
+		std::cout << "Error: File corrupted, cannot be open" << std::endl;
 		return (0);
+	}
 
 	while (std::getline(file, tmp))
 	{
@@ -69,9 +72,7 @@ int	main (int argc, char **argv)
 		return (1);
 	}
 	else
-	{
 		if (!(replaceString(argv[1], argv[2], argv[3])))
 			return (1);
-	}
 	return (0);
 }
