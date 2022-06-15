@@ -24,6 +24,7 @@ int	checkArgs(std::string &arg, std::string &s1, std::string &s2, std::ifstream 
 
 int	replaceString(std::string arg, std::string s1, std::string s2)
 {
+	bool replaced = false;
 	std::ifstream file(arg);
 	std::ofstream newFile;
 	std::string	nameFile;
@@ -42,13 +43,19 @@ int	replaceString(std::string arg, std::string s1, std::string s2)
 	while (std::getline(file, tmp))
 	{
 		if (tmp == s1)
+		{
+			replaced = true;
 			newFile << s2 << std::endl;
+		}
 		else
 			newFile << tmp << std::endl;
 	}
 
 	file.close();
 	newFile.close();
+
+	if (replaced == false)
+		std::cout << "No occurence found. File has been created, but still unchanged" << std::endl;
 
 	return (1);
 }
