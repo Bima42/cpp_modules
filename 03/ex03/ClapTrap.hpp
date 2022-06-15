@@ -32,7 +32,7 @@ class ClapTrap {
 		
 		void useEnergy ( void );
 
-	private:
+	protected:
 		std::string _name;
 		std::string _type;
 		int _hp;
