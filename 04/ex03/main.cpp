@@ -12,18 +12,21 @@ int main() {
     src->learnMateria(new Ice());
     src->learnMateria(new Cure());
 
+	std::cout << "🚧 ==== TEST : Materia stock full ==== 🚧" << std::endl;
     AMateria * tmp = new Ice();
     src->learnMateria(tmp);
+	std::cout << std::endl;
 
     delete tmp;
 
     ICharacter* me = new Character("a");
     ICharacter* bob = new Character("b");
 
-    me->equip(src->createMateria("ice"));
+	std::cout << "🚧 ==== TEST : Ice, Cure, Cure, Ice ==== 🚧" << std::endl;
 
     AMateria* cure = src->createMateria("cure");
 
+    me->equip(src->createMateria("ice"));
     me->equip(cure);
     me->equip(src->createMateria("cure"));
     me->equip(src->createMateria("ice"));
@@ -36,16 +39,28 @@ int main() {
 
     delete cure;
 
+	std::cout << "# Wrong Index : ";
     me->use(4, *bob);
+
     me->use(3, *bob);
     me->use(2, *bob);
     me->use(1, *bob);
     me->use(0, *bob);
+
+	std::cout << "# Wrong Index : ";
     me->use(-1, *bob);
+	std::cout << std::endl;
 
-    * dynamic_cast<Character *>(bob) = * dynamic_cast<Character *>(me);
+	delete tmp;
 
-    me->use(2, *bob);
+	std::cout << "🚧 ==== TEST : Index 1 = Cure -> Ice ==== 🚧" << std::endl;
+    tmp = src->createMateria("ice");
+
+    me->unequip(1);
+    me->equip(tmp);
+
+	std::cout << "# Index 1 : ";
+    me->use(1, *bob);
 
     delete me;
     delete bob;
