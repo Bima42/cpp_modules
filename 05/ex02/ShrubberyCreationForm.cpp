@@ -72,16 +72,22 @@ void Shrubbery::execute ( Bureaucrat const & executor ) const {
 	(void)executor;
 	std::ofstream file(_target + "_shrubbery");
 
-	if (!file.is_open() || file.bad())
-		throw Shrubbery::BadOpenException();
+	try {
+		if (!file.is_open() || file.bad())
+			throw Shrubbery::BadOpenException();
 
-	file << _tree << std::endl;
-	if (file.bad())
-	{
+		file << _tree << std::endl;
+		if (file.bad())
+		{
+			file.close();
+			throw Shrubbery::BadWriteException();
+		}
 		file.close();
-		throw Shrubbery::BadWriteException();
 	}
-	file.close();
+	catch (std::exception &e) {
+		std::cerr << e.what() << std::endl;
+		std::cout << "FAILURE ❌" << std::endl;
+	}
 }
 
 

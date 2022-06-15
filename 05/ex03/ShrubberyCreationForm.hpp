@@ -13,6 +13,7 @@ class Shrubbery: public Form {
 		Shrubbery &operator=( const Shrubbery &right );
 
 		const std::string getTarget ( void ) const; 
+		const std::string getTree ( void ) const;
 
 		void execute ( Bureaucrat const & executor ) const;
 

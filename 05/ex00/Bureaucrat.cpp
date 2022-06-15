@@ -7,17 +7,27 @@
 */
 
 Bureaucrat::Bureaucrat ( const std::string name, int grade ): _name(name), _grade(grade) {
-	if (_grade < 1)
-		throw Bureaucrat::GradeTooLowException();
-	else if (_grade > 150)
-		throw Bureaucrat::GradeTooHighException();
+	try {
+		if (_grade < 1)
+			throw Bureaucrat::GradeTooLowException();
+		else if (_grade > 150)
+			throw Bureaucrat::GradeTooHighException();
+	}
+	catch (std::exception const &e) {
+		std::cerr << e.what() << std::endl;
+	}
 }
 
 Bureaucrat::Bureaucrat ( const Bureaucrat &copy ): _name(copy.getName()),_grade(copy.getGrade()) {
-	if (_grade < 1)
-		throw Bureaucrat::GradeTooLowException();
-	else if (_grade > 150)
-		throw Bureaucrat::GradeTooHighException();
+	try {
+		if (_grade < 1)
+			throw Bureaucrat::GradeTooLowException();
+		else if (_grade > 150)
+			throw Bureaucrat::GradeTooHighException();
+	}
+	catch (std::exception const &e) {
+		std::cerr << e.what() << std::endl;
+	}
 }
 
 Bureaucrat::~Bureaucrat ( void ) {}
@@ -73,15 +83,25 @@ int Bureaucrat::getGrade ( void ) const {
 }
 
 void Bureaucrat::downGrade ( void ) {
-	if (this->_grade < 150)
-		this->_grade++;
-	else
-		throw Bureaucrat::GradeTooLowException();
+	try {
+		if (this->_grade < 150)
+			this->_grade++;
+		else
+			throw Bureaucrat::GradeTooLowException();
+	}
+	catch (std::exception const &e) {
+		std::cerr << e.what() << std::endl;
+	}
 }
 
 void Bureaucrat::upGrade ( void ) {
-	if (this->_grade > 1)
-		this->_grade--;
-	else
-		throw Bureaucrat::GradeTooHighException();
+	try {
+		if (this->_grade > 1)
+			this->_grade--;
+		else
+			throw Bureaucrat::GradeTooHighException();
+	}
+	catch (std::exception const &e) {
+		std::cerr << e.what() << std::endl;
+	}
 }
