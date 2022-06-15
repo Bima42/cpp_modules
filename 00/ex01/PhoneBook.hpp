@@ -22,7 +22,6 @@ public:
 	void	addContact();
 	void	searchContact();
 	void	collectInfos();
-
 };
 
 #endif

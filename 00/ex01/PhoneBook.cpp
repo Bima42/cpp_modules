@@ -3,6 +3,7 @@
 PhoneBook::PhoneBook ( void ) {
 	std::cout << "Welcome." << std::endl;
 	this->count = -1;
+	this->empty = false;
 	return;
 }
 
@@ -82,6 +83,10 @@ void	PhoneBook::collectInfos ( void ) {
     std::cout << "Nickname : " << std::endl;
     std::cin >> infos;
     this->contact[this->count].setNickName(infos);
+
+    std::cout << "Phone Number : " << std::endl;
+    std::cin >> infos;
+    this->contact[this->count].setPhone(infos);
 	std::cin.ignore();
 
     std::cout << "Darkest secret : " << std::endl;

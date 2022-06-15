@@ -24,6 +24,10 @@ std::string Contact::getSecret ( void ) const {
 	return (this->secret);
 }
 
+std::string Contact::getPhone ( void ) const {
+	return (this->phone_nb);
+}
+
 void Contact::setFirstName ( std::string name ) {
 	this->first_name = name;
 }
@@ -38,4 +42,8 @@ void Contact::setNickName ( std::string name ) {
 
 void Contact::setSecret ( std::string secret ) {
 	this->secret = secret;
+}
+
+void Contact::setPhone ( std::string nb ) {
+	this->phone_nb = nb;
 }
