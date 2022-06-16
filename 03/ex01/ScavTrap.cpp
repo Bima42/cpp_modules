@@ -32,10 +32,10 @@ void ScavTrap::attack ( const std::string &target ) {
 	{
 		this->useEnergy();
 		std::cout << "ScavTrap " << this->getName() << " attacks "
-			<< target << ", causing " << this->getAd()  << " points of damage!" << std::endl;
+			<< target << ", causing " << this->getAd()  << " damages! That's a lot !" << std::endl;
 	}
 	else if (this->getEnergy() == 0)
-		std::cout << "ScavTrap " << this->getName() << " is tired !" << std::endl;
+		std::cout << "ScavTrap " << this->getName() << " is tired. He cannot move." << std::endl;
 	else
 		std::cout << "ScavTrap " << this->getName() << " is wounded ! He cannot attack." << std::endl;
 }

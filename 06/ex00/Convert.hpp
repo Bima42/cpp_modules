@@ -31,4 +31,8 @@ class Convert {
 		void execution ( Convert convert, char *argv ) const;
 };
 
+long	ft_stol(const std::string &str);
+int		ft_stoi(const std::string &str);
+double	ft_stod(const std::string &str);
+
 #endif

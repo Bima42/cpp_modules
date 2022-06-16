@@ -1,6 +1,6 @@
 NAME = convert
 
-SRCS =	main.cpp Convert.cpp
+SRCS =	main.cpp Convert.cpp conversion.cpp
 
 CC = g++-11
 FLAGS = -Wall -Wextra -Werror -pedantic

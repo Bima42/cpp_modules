@@ -5,17 +5,6 @@ int main( void )
 	ClapTrap clap("Dude");
 	ScavTrap scav("Bob");
 
-
-	clap.attack("Buddy");
-	clap.takeDamage(9);
-	clap.beRepaired(15);
-	clap.takeDamage(12);
-	clap.beRepaired(40);
-	clap.takeDamage(1);
-	clap.takeDamage(12);
-
-	std::cout << "-------------------------------------" << std::endl;
-
 	scav.guardGate();
 	scav.attack("Bouddha");
 	scav.attack("Bouddha");

@@ -68,7 +68,7 @@ int Span::getMax ( void ) const {
 void Span::addNumber ( int nb ) 
 {
 	if (_index >= _max) {
-		throw std::invalid_argument("InvalidArgumentException : " + std::to_string(nb) + " can't be added. Span is full.");
+		throw std::invalid_argument("InvalidArgumentException : number can't be added. Span is full.");
 		return ;
 	}
 	_vec[_index++] = nb;
@@ -106,7 +106,7 @@ void Span::insert(std::vector<int>::iterator &pos, int count, int value)
 	if (pos >= end() || pos < begin())
 		throw std::out_of_range("OutOfRangeException : Position is out of range !");
 	if (count > (std::vector<int>::iterator)_vec.end() - pos)
-		throw std::out_of_range("OutOfRangeException : Can't add " + std::to_string(count) + " datas. Container size is not enough.");
+		throw std::out_of_range("OutOfRangeException : Can't add those datas. Container size is not enough.");
 	
 	// Use a copy iterator to know where we have to stop using it and count
 	for (std::vector<int>::iterator it = pos; it < pos + count; it++) {

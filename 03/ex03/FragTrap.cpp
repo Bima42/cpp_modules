@@ -31,13 +31,13 @@ void FragTrap::attack ( const std::string &target ) {
 	if (this->getEnergy() > 0 && this->getHp() > 0)
 	{
 		this->useEnergy();
-		std::cout << "FragTrap " << this->getName() << " attacks "
-			<< target << ", causing " << this->getAd()  << " points of damage!" << std::endl;
+		std::cout << "FragTrap " << this->getName() << " hits "
+			<< target << ", causing " << this->getAd()  << " damages. WOW." << std::endl;
 	}
 	else if (this->getEnergy() == 0)
-		std::cout << "FragTrap " << this->getName() << " is tired !" << std::endl;
+		std::cout << "FragTrap " << this->getName() << " is sleeping ..." << std::endl;
 	else
-		std::cout << "FragTrap " << this->getName() << " is wounded ! He cannot attack." << std::endl;
+		std::cout << "FragTrap " << this->getName() << " is wounded :(" << std::endl;
 }
 
 void FragTrap::highFivesGuys ( void ) {

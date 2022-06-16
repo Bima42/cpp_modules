@@ -24,20 +24,23 @@ int main ( void )
 		std::cerr << ex.what() << std::endl << "Adding too much datas : FAILURE ❌" << std::endl;
 	}
 
+	std::cout << std::endl;
+	std::cout << "🚧 ==== PRINT SPAN ==== 🚧" << std::endl;
+	sp.show();		
+
+	std::cout << std::endl;
 	std::cout << "🚧 ==== TEST : Span Functions ==== 🚧" << std::endl;
 	std::cout << "Longest span = " << sp.longestSpan() << std::endl;
 	std::cout << "Shortest span = " << sp.shortestSpan() << std::endl;
 
-
-	std::cout << "🚧 ==== PRINT SPAN ==== 🚧" << std::endl;
-	sp.show();		
-
+	std::cout << std::endl;
 	std::cout << "🚧 ==== TEST : Insert Function ==== 🚧" << std::endl;
 	std::cout << "### Adding 2 integers at the beggining ###" << std::endl; 
 
 	std::vector<int>::iterator start = sp.begin();
 	sp.insert(start, 2, 10);
 	sp.show();		
+	std::cout << std::endl;
 
 	try {
 		std::cout << "⚠️  Trying to add 2 integers at the end ⚠️" << std::endl; 
@@ -47,6 +50,8 @@ int main ( void )
 	catch (std::out_of_range &ex) {
 		std::cout << ex.what() << std::endl;
 	}
+
+	std::cout << std::endl;
 
 	try {
 		std::cout << "⚠️  Trying to add datas out of range ⚠️" << std::endl; 
