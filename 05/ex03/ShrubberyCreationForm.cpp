@@ -70,7 +70,10 @@ const std::string Shrubbery::getTree ( void ) const {
 
 void Shrubbery::execute ( Bureaucrat const & executor ) const {
 	(void)executor;
-	std::ofstream file(_target + "_shrubbery");
+
+	std::string str = _target + "_shrubbery";
+	char *file_name = const_cast<char *>(str.c_str());
+	std::ofstream file(file_name);
 
 	try {
 		if (!file.is_open() || file.bad())

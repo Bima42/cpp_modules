@@ -4,7 +4,6 @@
 
 int main (void)
 {
-	srand (time(NULL));
 	Bureaucrat	edjie("Edjie", 1);
 	Shrubbery test("chevre");
 

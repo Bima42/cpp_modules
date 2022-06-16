@@ -3,7 +3,7 @@ NAME_e = materia_eval
 
 SRCS =	main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
 
-CC = c++
+CC = g++-11
 FLAGS = -Wall -Wextra -Werror -pedantic
 CPP_FLAGS = -std=c++98
 

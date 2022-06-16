@@ -2,7 +2,7 @@ NAME = clap
 
 SRCS =	main.cpp ClapTrap.cpp
 
-CC = c++
+CC = g++-11
 FLAGS = -Wall -Wextra -Werror -pedantic
 CPP_FLAGS = -std=c++98
 

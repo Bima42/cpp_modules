@@ -5,8 +5,6 @@
 
 int main (void)
 {
-	srand (time(NULL));	
-
 	Intern intern;
 	Form *form;
 	Bureaucrat edjie("Edjie", 5);
@@ -35,8 +33,6 @@ int main (void)
 	edjie.executeForm(*form);
 
 	delete form;
-
-	while(1) {}
 
 	return 0;
 }

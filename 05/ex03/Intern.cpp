@@ -62,6 +62,6 @@ Form *Intern::makeForm ( const std::string name, const std::string target ) cons
 		}
 		default :
 			std::cerr << "This Form name doesn't exist. Choose between PresidentialForm, ShrubberyForm or RobotomyForm. Thanks." << std::endl;
-			return nullptr;
+			return NULL;
 	}
 }

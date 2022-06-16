@@ -3,7 +3,7 @@ NAME = bureaucrat
 SRCS =	main.cpp Bureaucrat.cpp Form.cpp Intern.cpp\
 		RobotomyRequestForm.cpp ShrubberyCreationForm.cpp PresidentialPardonForm.cpp
 
-CC = c++
+CC = g++-11
 FLAGS = -Wall -Wextra -Werror -pedantic
 CPP_FLAGS = -std=c++98
 

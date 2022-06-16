@@ -2,7 +2,7 @@ NAME = brain
 
 SRCS =	main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp
 
-CC = c++
+CC = g++-11
 FLAGS = -Wall -Wextra -Werror -pedantic
 CPP_FLAGS = -std=c++98
 
