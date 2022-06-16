@@ -6,6 +6,9 @@
 # include <string>
 # include <math.h>
 # include <limits.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <cctype>
 
 class Convert {
 
@@ -22,6 +25,8 @@ class Convert {
 		void display ( int i ) const;
 		void display ( float f ) const;
 		void display ( double d ) const;
+		void display ( void ) const;
+		void display ( std::string arg ) const;
 
 		void execution ( Convert convert, char *argv ) const;
 };

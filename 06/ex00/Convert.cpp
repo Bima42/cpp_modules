@@ -1,4 +1,5 @@
 #include "Convert.hpp"
+#include "conversion.hpp"
 
 Convert::Convert ( void ) {}
 
@@ -14,12 +15,14 @@ Convert &Convert::operator = ( const Convert &right ) {
 }
 
 std::string Convert::getType ( std::string arg ) const {
-	if ((arg.length() > 3 && arg.at(arg.length() - 1) == 'f')
-				|| arg == "nanf")
-		return ("float");
-	else if ((arg.length() > 2 && arg.find(".") != std::string::npos)
+	int i = -1;
+
+	if ((arg.length() > 2 && arg.find(".") != std::string::npos)
 				|| arg == "nan" || arg == "-inf" || arg == "+inf")
 		return ("double");
+	else if ((arg.length() > 3 && arg.at(arg.length() - 1) == 'f')
+				|| arg == "nanf" || arg == "-inff" || arg == "+inff")
+		return ("float");
 	else if (arg.length() == 1)
 	{
 		char c = arg.at(0);
@@ -30,6 +33,11 @@ std::string Convert::getType ( std::string arg ) const {
 			return ("char");
 		return ("invalid");
 	}
+	if (arg[0] == '-')
+		i = 0;
+	while (arg[++i])
+		if (!isdigit(arg[i]))
+			return ("error");
 	return ("int");
 }
 
@@ -92,6 +100,31 @@ void Convert::display ( double d ) const {
 	std::cout << "double: " << d << std::endl;
 }
 
+void Convert::display ( void ) const {
+	std::cout << "char: impossible" << std::endl;
+	std::cout << "int: impossible" << std::endl;
+	std::cout << "float: impossible" << std::endl;
+	std::cout << "double: impossible" << std::endl;
+}
+
+void Convert::display ( std::string arg ) const {
+	std::cout << "char: impossible" << std::endl;
+	std::cout << "int: impossible" << std::endl;
+
+	if (arg == "nanf" || arg == "nan") {
+		std::cout << "float: nanf" << std::endl;
+		std::cout << "double: nan" << std::endl;
+	}
+	else if (arg == "+inff" || arg == "+inf") {
+		std::cout << "float: +inff" << std::endl;
+		std::cout << "double: +inf" << std::endl;
+	}
+	else if (arg == "-inff" || arg == "-inf") {
+		std::cout << "float: -inff" << std::endl;
+		std::cout << "double: -inf" << std::endl;
+	}
+}
+
 void Convert::execution ( Convert convert, char *argv ) const {
 	std::string arg = static_cast<std::string>(argv);
 	std::string	type = convert.getType(arg);
@@ -103,20 +136,29 @@ void Convert::execution ( Convert convert, char *argv ) const {
 	}
 	else if (type == "int")
 	{
-		int i = std::atoi(argv); // Use ATOI because ABORT ERROR with stoi for input like "test"
+		int i = ft_stoi(arg);
 		convert.display(i);
 	}
 	else if (type == "float")
 	{
-		float f = std::stof(arg);
-		convert.display(f);
+		if (arg == "nanf" || arg == "-inff" || arg == "+inff")
+			display(arg);
+		else {
+			float f = ft_stol(arg);
+			convert.display(f);
+		}
 	}
 	else if (type == "double")
 	{
-		double d = std::stod(arg);
-		convert.display(d);
+		if (arg == "nan" || arg == "-inf" || arg == "+inf")
+			display(arg);
+		else {
+			double d = ft_stod(arg);
+			convert.display(d);
+		}
 	}
+	else if (type == "error")
+		convert.display();
 	else if (type == "invalid")
 		std::cout << "Error: Invalid Character Input." << std::endl;
 }
-

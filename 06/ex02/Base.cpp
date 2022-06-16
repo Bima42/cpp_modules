@@ -24,7 +24,7 @@ Base *generate ( void ) {
 		}
 		default: {
 			std::cout << "Nothing created. Null returned" << std::endl;
-			return (nullptr);
+			return NULL;
 		}
 	}
 }
@@ -55,7 +55,7 @@ void identify ( Base &p ) {
 		std::cout << "Reference type is A !" << std::endl;
 		return ;
 	}
-	catch (std::bad_cast) {
+	catch (const std::bad_cast&) {
 		std::cout << "Type is not A ... Trying B" << std::endl;
 	}
 
@@ -64,7 +64,7 @@ void identify ( Base &p ) {
 		std::cout << "Reference type is B !" << std::endl;
 		return ;
 	}
-	catch (std::bad_cast) {
+	catch (const std::bad_cast&) {
 		std::cout << "Type is not B ... Trying C" << std::endl;
 	}
 
@@ -73,7 +73,7 @@ void identify ( Base &p ) {
 		std::cout << "Reference type is C !" << std::endl;
 		return ;
 	}
-	catch (std::bad_cast) {
+	catch (const std::bad_cast&) {
 		std::cout << "Type is not C. Object passed is not a sublass of Base !" << std::endl;
 	}
 }

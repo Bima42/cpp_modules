@@ -4,7 +4,7 @@ NAME_e = template_eval
 SRCS =	main.cpp
 SRCSe = main_eval.cpp
 
-CC = c++
+CC = g++-11
 FLAGS = -Wall -Wextra -Werror -pedantic
 CPP_FLAGS = -std=c++98
 

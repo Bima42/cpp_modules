@@ -7,6 +7,7 @@ int main (void)
 	Bureaucrat	edjie("Edjie", 1);
 	Shrubbery test("chevre");
 
+	srand (time(NULL));
 	std::cout << "🚧 ---------- TEST : Shrubbery ---------- 🚧" << std::endl;
 	edjie.signForm(test);
 	edjie.executeForm(test);

@@ -9,6 +9,7 @@ int main (void)
 	Form *form;
 	Bureaucrat edjie("Edjie", 5);
 
+	srand (time(NULL));	
 	std::cout << "🚧 ---------- TEST : Intern ---------- 🚧" << std::endl;
 	form = intern.makeForm("PresidentialForm", "Yvan");
 	std::cout << "### Sign Form ... ###" << std::endl;
