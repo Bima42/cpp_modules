@@ -2,7 +2,7 @@
 
 int main( void )
 {
-	DiamondTrap diamond("Hybride");
+	DiamondTrap diamond("Mammouth");
 
 	std::cout << "--------------------" << std::endl;
 	std::cout << "AD : " << diamond.getAd() << std::endl;

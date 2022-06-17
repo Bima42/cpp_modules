@@ -1,9 +1,5 @@
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap ( void ) {
-	std::cout << "Default DiamondTrap constructor called" << std::endl;
-}
-
 DiamondTrap::DiamondTrap ( const std::string name ): ClapTrap(name + "_clap_name") {
 	std::cout << "DiamondTrap " << name << " is build." << std::endl;
 	_name = name;
@@ -14,6 +10,18 @@ DiamondTrap::DiamondTrap ( const DiamondTrap &copy ): ClapTrap(copy), FragTrap()
 	std::cout << "DiamondTrap " << _name << " copy constructor called" << std::endl;
 	_name = copy.getName();
 	this->setAd(30);
+}
+
+DiamondTrap &DiamondTrap::operator = ( const DiamondTrap &right ) {
+	if (&right != this) {
+		this->_name = right.getName();
+		this->_type = right.getType();
+		this->_hp = right.getHp();
+		this->_energy = right.getEnergy();
+		this->_ad = right.getAd();
+		this->_hpBase = right.getHpBase();
+	}
+	return (*this);
 }
 
 DiamondTrap::~DiamondTrap ( void ) {

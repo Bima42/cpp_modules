@@ -6,10 +6,11 @@
 class DiamondTrap: public FragTrap, public ScavTrap {
 
 	public:
-		DiamondTrap ( void );
 		DiamondTrap ( const std::string name );
 		DiamondTrap ( const DiamondTrap &copy );
 		virtual ~DiamondTrap ( void );
+
+		DiamondTrap &operator=( const DiamondTrap &right );
 
 		void attack ( const std::string &target );
 
