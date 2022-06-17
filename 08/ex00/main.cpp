@@ -22,34 +22,34 @@ int main ( void )
 	std::cout << "🚧 ==== TEST : Vector Success ==== 🚧" << std::endl;
 	int ret = easyfind(vec, 5);
 	if (ret == -1)
-		std::cout << "Wrong arguments : no occurence found." << std::endl;
+		std::cout << "Wrong arguments : no occurence found for 5." << std::endl;
 	else
-		std::cout << "Occurence found ! Index : " << ret << std::endl;
+		std::cout << "Occurence found for 5 ! Index : " << ret << std::endl;
 
 	std::cout << std::endl;
 	std::cout << "🚧 ==== TEST : Vector Failure ==== 🚧" << std::endl;
 	ret = easyfind(vec, 654);
 	if (ret == -1)
-		std::cout << "Wrong arguments : no occurence found." << std::endl;
+		std::cout << "Wrong arguments : no occurence found for 654." << std::endl;
 	else
-		std::cout << "Occurence found ! Index : " << ret << std::endl;
+		std::cout << "Occurence found for 654 ! Index : " << ret << std::endl;
 
 	std::cout << std::endl;
 
 	std::cout << "🚧 ==== TEST : List Success ==== 🚧" << std::endl;
 	ret = easyfind(list, -54);
 	if (ret == -1)
-		std::cout << "Wrong arguments : no occurence found." << std::endl;
+		std::cout << "Wrong arguments : no occurence found for -54." << std::endl;
 	else
-		std::cout << "Occurence found ! Index : " << ret << std::endl;
+		std::cout << "Occurence found for -54 ! Index : " << ret << std::endl;
 
 	std::cout << std::endl;
 	std::cout << "🚧 ==== TEST : List Failure ==== 🚧" << std::endl;
 	ret = easyfind(vec, 0);
 	if (ret == -1)
-		std::cout << "Wrong arguments : no occurence found." << std::endl;
+		std::cout << "Wrong arguments : no occurence found for 0." << std::endl;
 	else
-		std::cout << "Occurence found ! Index : " << ret << std::endl;
+		std::cout << "Occurence found for 0 ! Index : " << ret << std::endl;
 
 	return (0);
 

@@ -27,6 +27,18 @@ FragTrap::~FragTrap ( void ) {
 	std::cout << "FragTrap " << this->getName() << " destructor called" << std::endl;
 }
 
+FragTrap &FragTrap::operator=( const FragTrap &right) {
+	if (&right != this) {
+		this->_name = right.getName();
+		this->_type = right.getType();
+		this->_hp = right.getHp();
+		this->_energy = right.getEnergy();
+		this->_ad = right.getAd();
+		this->_hpBase = right.getHpBase();
+	}
+	return (*this);
+}
+
 void FragTrap::attack ( const std::string &target ) {
 	if (this->getEnergy() > 0 && this->getHp() > 0)
 	{

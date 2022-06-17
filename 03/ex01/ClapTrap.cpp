@@ -29,6 +29,18 @@ ClapTrap::~ClapTrap ( void ) {
 }
 
 
+ClapTrap &ClapTrap::operator=( const ClapTrap &right ) {
+	if (&right != this) {
+		this->_name = right.getName();
+		this->_type = right.getType();
+		this->_hp = right.getHp();
+		this->_energy = right.getEnergy();
+		this->_ad = right.getAd();
+		this->_hpBase = right.getHpBase();
+	}
+	return (*this);
+}
+
 /* ========================================================================
  *                                                                        |
  *                               FUNCTIONS                                |

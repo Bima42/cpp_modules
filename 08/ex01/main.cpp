@@ -15,14 +15,8 @@ int main ( void )
 
 	std::cout << "🚧 ==== SPAN Created ==== 🚧" << std::endl;
 
-	try {
-		std::cout << "⚠️  Trying to add too much datas ⚠️ " << std::endl;
-		sp.addNumber(89);
-		std::cout << "Adding too much datas : SUCCESS ✅" << std::endl;
-	}
-	catch (std::invalid_argument & ex) {
-		std::cerr << ex.what() << std::endl << "Adding too much datas : FAILURE ❌" << std::endl;
-	}
+	std::cout << "⚠️  Trying to add too much datas ⚠️ " << std::endl;
+	sp.addNumber(89);
 
 	std::cout << std::endl;
 	std::cout << "🚧 ==== PRINT SPAN ==== 🚧" << std::endl;
@@ -42,25 +36,35 @@ int main ( void )
 	sp.show();		
 	std::cout << std::endl;
 
-	try {
-		std::cout << "⚠️  Trying to add 2 integers at the end ⚠️" << std::endl; 
-		std::vector<int>::iterator end = sp.end() - 1;
-		sp.insert(end, 2, 25);
-	}
-	catch (std::out_of_range &ex) {
-		std::cout << ex.what() << std::endl;
-	}
+	std::cout << "⚠️  Trying to add 2 integers at the end ⚠️" << std::endl; 
+	std::vector<int>::iterator end = sp.end() - 1;
+	sp.insert(end, 2, 25);
 
 	std::cout << std::endl;
 
-	try {
-		std::cout << "⚠️  Trying to add datas out of range ⚠️" << std::endl; 
-		std::vector<int>::iterator test = sp.begin() - 2;
-		sp.insert(test, 2, 25);
-	}
-	catch (std::out_of_range &ex) {
-		std::cout << ex.what() << std::endl;
-	}
+	std::cout << "⚠️  Trying to add datas out of range ⚠️" << std::endl; 
+	std::vector<int>::iterator test = sp.begin() - 2;
+	sp.insert(test, 2, 25);
+
+	std::cout << std::endl;
+
+	Span span = Span(12000);
+
+	std::cout << "🚧 ==== TEST : SPAN 12000 numbers ==== 🚧" << std::endl;
+	std::vector<int>::iterator test2 = span.begin();
+	span.insert(test2, 2000, 50);
+	test2 = span.begin() + 2000;
+	span.insert(test2, 2000, 80);
+	test2 = span.begin() + 4000;
+	span.insert(test2, 2000, -50);
+	test2 = span.begin() + 6000;
+	span.insert(test2, 2000, 15);
+	test2 = span.begin() + 8000;
+	span.insert(test2, 2000, 896);
+	test2 = span.begin() + 10000;
+	span.insert(test2, 2000, 1);
+	std::cout << "Longest span = " << span.longestSpan() << std::endl;
+	std::cout << "Shortest span = " << span.shortestSpan() << std::endl;
 
 	return 0;
 }

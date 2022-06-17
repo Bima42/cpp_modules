@@ -55,13 +55,10 @@ const char* Bureaucrat::GradeTooLowException::what() const throw() {
 Bureaucrat &Bureaucrat::operator = ( const Bureaucrat &right ) {
 	if (&right == this)
 		return (*this);
-//	this->_name = right.getName(); DON'T WORK BECAUSE OF CONST STD::STRING
 	this->_grade = right.getGrade();
 	return (*this);
 }
 
-
-// NO Bureaucrat:: before operator : function is outside of class
 
 std::ostream &operator << ( std::ostream &out, const Bureaucrat &right ) {
 	out << right.getName() << ", bureaucrat grade " << right.getGrade() << "." << std::endl;

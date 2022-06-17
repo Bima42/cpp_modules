@@ -7,6 +7,7 @@ Dog::Dog ( void ): Animal() {
 
 Dog::Dog ( const Dog &copy ): Animal(copy) {
 	std::cout << "Dog Copy Constructor Called" << std::endl;
+	_type = copy.getType();;
 }
 
 Dog::~Dog ( void ) {

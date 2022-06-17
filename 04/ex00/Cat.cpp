@@ -7,6 +7,7 @@ Cat::Cat ( void ): Animal() {
 
 Cat::Cat ( const Cat &copy ): Animal(copy) {
 	std::cout << "Cat Copy Constructor Called" << std::endl;
+	_type = copy.getType();;
 }
 
 Cat::~Cat ( void ) {

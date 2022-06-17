@@ -67,11 +67,14 @@ int Span::getMax ( void ) const {
 
 void Span::addNumber ( int nb ) 
 {
-	if (_index >= _max) {
-		throw std::invalid_argument("InvalidArgumentException : number can't be added. Span is full.");
-		return ;
+	try {
+		if (_index >= _max)
+			throw std::invalid_argument("InvalidArgumentException : number can't be added. Span is full.");
+		_vec[_index++] = nb;
 	}
-	_vec[_index++] = nb;
+	catch (std::invalid_argument & ex) {
+		std::cerr << ex.what() << std::endl << "Adding too much datas : FAILURE ❌" << std::endl;
+	}
 }
 
 int Span::longestSpan ( void ) const 
@@ -103,14 +106,19 @@ int Span::shortestSpan ( void ) const
 
 void Span::insert(std::vector<int>::iterator &pos, int count, int value) 
 {
-	if (pos >= end() || pos < begin())
-		throw std::out_of_range("OutOfRangeException : Position is out of range !");
-	if (count > (std::vector<int>::iterator)_vec.end() - pos)
-		throw std::out_of_range("OutOfRangeException : Can't add those datas. Container size is not enough.");
+	try {
+		if (pos >= end() || pos < begin())
+			throw std::out_of_range("OutOfRangeException : Position is out of range !");
+		if (count > (std::vector<int>::iterator)_vec.end() - pos)
+			throw std::out_of_range("OutOfRangeException : Can't add those datas. Container size is not enough.");
 	
-	// Use a copy iterator to know where we have to stop using it and count
-	for (std::vector<int>::iterator it = pos; it < pos + count; it++) {
-		*it = value;
+		// Use a copy iterator to know where we have to stop using it and count
+		for (std::vector<int>::iterator it = pos; it < pos + count; it++) {
+			*it = value;
+		}
+	}
+	catch (std::out_of_range &ex) {
+		std::cout << ex.what() << std::endl;
 	}
 }
 
