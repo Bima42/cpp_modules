@@ -19,6 +19,8 @@ int main()
 			convert << "Dog: " << i << " | Ideas: " << j << std::endl;
 			result = convert.str();
 			ideas[j] = result;
+			convert.str("");
+			convert.clear();
 		}
 	}
 	for (;i < AMOUNT; i++) {
@@ -28,6 +30,8 @@ int main()
 			convert << "Cat: " << i << " | Ideas: " << j << std::endl;
 			result = convert.str();
 			ideas[j] = result;
+			convert.str("");
+			convert.clear();
 		}
 	}
 
