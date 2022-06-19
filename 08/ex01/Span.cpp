@@ -81,8 +81,13 @@ int Span::longestSpan ( void ) const
 {
 	std::vector<int> tmp = _vec;
 
-	std::sort(tmp.begin(), tmp.end());
-	return (tmp.back() - tmp.front());
+	if (_index > 2) {
+		std::sort(tmp.begin(), tmp.end());
+		return (tmp.back() - tmp.front());
+	}
+	else
+		std::cout << "Error: Not enough numbers inside container." << std::endl;
+	return 0;
 }
 
 int Span::shortestSpan ( void ) const 
@@ -91,17 +96,22 @@ int Span::shortestSpan ( void ) const
 
 	std::sort(tmp.begin(), tmp.end()); 					//Sort tmp vector
 
-	int diff = std::numeric_limits<int>::max(); 		//Set diff to int_max
-	for (unsigned long i = 0; i < tmp.size(); i++)		//Unsigned long because of size() return
-	{													//Try every diff starting by firsts elements and keep the smallest
-		if (i + 1 < tmp.size())
-		{
-			int tmpDiff = tmp[i + 1] - tmp[i];
-			if (tmpDiff < diff)
-				diff = tmpDiff;
+	if (_index > 2) {
+		int diff = std::numeric_limits<int>::max(); 		//Set diff to int_max
+		for (unsigned long i = 0; i < tmp.size(); i++)		//Unsigned long because of size() return
+		{													//Try every diff starting by firsts elements and keep the smallest
+			if (i + 1 < tmp.size())
+			{
+				int tmpDiff = tmp[i + 1] - tmp[i];
+				if (tmpDiff < diff)
+					diff = tmpDiff;
+			}
 		}
+		return (diff);
 	}
-	return (diff);
+	else
+		std::cout << "Error: Not enough numbers inside container." << std::endl;
+	return 0;
 }
 
 void Span::insert(std::vector<int>::iterator &pos, int count, int value) 

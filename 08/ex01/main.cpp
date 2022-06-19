@@ -3,8 +3,12 @@
 int main ( void )
 {
 	Span sp = Span(6);
+	Span wrong = Span(1);
 	
 	std::cout << "🚧 ==== TEST : SPAN Creation ==== 🚧" << std::endl;
+
+	std::cout << "Longest span = " << wrong.longestSpan() << std::endl;
+	std::cout << "Shortest span = " << wrong.shortestSpan() << std::endl;
 
 	sp.addNumber(43);
 	sp.addNumber(5);
